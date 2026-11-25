@@ -1,0 +1,67 @@
+{
+  "name": "@capnative/capacitor-share-content",
+  "version": "8.0.0",
+  "description": "Share text, links, and files from Capacitor through the system share sheet on iOS and Android.",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "unpkg": "dist/plugin.js",
+  "files": [
+    "android/src/main/",
+    "android/build.gradle",
+    "android/proguard-rules.pro",
+    "dist/",
+    "ios/Sources",
+    "ios/Tests",
+    "Package.swift",
+    "CapnativeCapacitorShareContent.podspec"
+  ],
+  "author": "Mario Shtika",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capnative/capacitor-share-content.git"
+  },
+  "bugs": {
+    "url": "https://github.com/capnative/capacitor-share-content/issues"
+  },
+  "homepage": "https://github.com/capnative/capacitor-share-content#readme",
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native",
+    "share",
+    "share-sheet"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc && rollup -c rollup.config.mjs",
+    "clean": "rm -rf dist",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.test.json",
+    "verify:android": "cd android && ./gradlew test --stacktrace",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "rollup": "^4.53.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@capacitor/core": ">=8.0.0"
+  },
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
+}

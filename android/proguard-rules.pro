@@ -1,0 +1,1 @@
+-keep class app.capnative.sharecontent.ShareContentPlugin { *; }
