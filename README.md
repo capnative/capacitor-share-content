@@ -40,12 +40,6 @@ await ShareContent.share({
 });
 ```
 
-Dismissing the sheet rejects with code `SHARE_CANCELED`. Calling `share` again while a sheet is open rejects with `SHARE_IN_PROGRESS`.
-
-## Sharing files
-
-`files` and a `file://` `url` are local files. iOS shares any `file://` URL the app can read. Android shares through the app `FileProvider` (`${applicationId}.fileprovider`). Capacitor already lists the cache directory in `android/app/src/main/res/xml/file_paths.xml`. A file outside those paths is rejected. Add a `<paths>` entry before sharing another directory.
-
 ## API
 
 <docgen-index>
